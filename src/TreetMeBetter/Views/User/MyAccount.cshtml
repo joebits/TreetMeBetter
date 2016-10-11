@@ -1,0 +1,98 @@
+﻿@model UserMyAccountVM
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "My Account";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.css" />
+
+<div onload="GetUserInfo()" class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <h2>My Account</h2>
+        </div>
+        <div class="dropdown pull-right">
+            <br />
+            <button class="btn btn-danger dropdown-toggle" type="button" data-toggle="dropdown">
+                Delete Account
+            </button>
+
+            <div class="dropdown-menu">
+                <div style="width:200px" align="center">Are you sure?</div><br />
+                <div align="center"><input type="button" id="deleteAccountbtn" class="btn btn-danger" value="Yes, please." /></div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <!-- left column -->
+        <div class="col-md-3">
+            <div class="text-center">
+                <i style="color:green; font-size: 20em" class="glyphicon glyphicon-tree-deciduous"></i>
+
+            </div>
+        </div>
+
+        <!-- edit form column -->
+        <div class="col-md-9 personal-info">
+            <div id="alertMessage" class="alert alert-info alert-dismissable none">
+                <p>Update Saved!</p>
+                <a class="panel-close close" data-dismiss="alert"></a>
+
+
+            </div>
+            <h3>Edit info</h3>
+
+            <form id="formVal" name="formVal" class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Username:</label>
+                    <div class="col-lg-8">
+                        <input name="usernameReg" id="usernameReg" class="form-control" type="text" value="@Model.UserName">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Email: </label>
+                    <div class="col-lg-8">
+                        <input name="emailReg" id="emailReg" class="form-control" type="email" value="@Model.Email">
+                    </div>
+                </div>
+                <div id="oldPasswordDiv" class="form-group">
+                    <label class="col-md-3 control-label">Old Password:</label>
+                    <div class="col-md-8">
+                        <input id="oldpassword" class="form-control" type="password" value="">
+                        <i id="validCheck" class="form-control-feedback bv-no-label glyphicon glyphicon-ok none" data-bv-icon-for="passwordReg" style=""></i>
+                        <i id="errorCheck" class="form-control-feedback bv-no-label glyphicon glyphicon-remove none" data-bv-icon-for="passwordReg" style=""></i>
+                    </div>
+                </div>
+                <div class="form-group" id="newPassword">
+                    <label class="col-md-3 control-label">New Password:</label>
+                    <div class="col-md-8">
+                        <input name="passwordReg" id="passwordReg" class="form-control" type="password" value="">
+                    </div>
+                </div>
+                <div class="form-group" id="confPassword">
+                    <label class="col-md-3 control-label">Confirm new password:</label>
+                    <div class="col-md-8">
+                        <input class="form-control" name="confirmPassword" id="confirmPassword" type="password" value="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label"></label>
+                    <div class="col-md-8">
+                        <input type="button" id="updatebtn" class="btn btn-primary pull-right" value="Save Changes">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<hr>
+
+@section Script{
+    <script src="~/Scripts/Styling.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.js"></script>
+    <script src="~/Scripts/CheckIsLoggedIn.js"></script>
+    <script src="~/Scripts/Login.js"></script>
+    <script src="~/Scripts/UserProfile.js"></script>
+}

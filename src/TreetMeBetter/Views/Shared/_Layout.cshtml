@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>TreetMeBetter</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link href="~/CSS/Style.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+</head>
+<body>
+    <nav class="navbar navbar-inverse" style="background-color:#21610B">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="glyphicon glyphicon-tree-deciduous fa-3x" style="color:white" href="/home/index/"></a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a id="headerStyle" href="/user/SadFacts"><b>About</b></a></li>
+
+            </ul>
+            <ul id="navBtns" class="nav navbar-nav navbar-right">
+                <li id="MyTravelsButton" class="none"><a id="headerStyle" href="/user/mytravels"><b>My Travels</b></a></li>
+                <li id="MyAccountButton" class="none"><a id="headerStyle" href="/user/myaccount/"><b>My Account</b></a></li>
+                <li id="loggBtn"><a id="headerStyle" data-toggle="modal" data-target="#myModal" href="#"><span id="btn2" class="glyphicon glyphicon-user"></span><b>Login/Register </b></a></li>
+                <li id="logOutButton" class="none"><a id="headerStyle" href="/user/logout"><span id="logOutSpan" class="glyphicon glyphicon-log-out"></span><b>Log Out</b></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="footerMargin">
+        @RenderBody()
+    </div>
+
+    <footer class="footer navbar-fixed-bottom" style="font-size:100%; background-color:black; color:white; text-align:center">
+        <a class="glyphicon glyphicon-tree-deciduous fa-2x" style="color:white"></a>
+        TreetMeBetter - compensate for your carbon footprint
+        <a class="glyphicon glyphicon-tree-deciduous fa-2x" style="color:white"></a>
+    </footer>
+
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/4c6ae65ba0.js"></script>
+
+
+    @RenderSection("Script", required: false)
+</body>
+</html>
