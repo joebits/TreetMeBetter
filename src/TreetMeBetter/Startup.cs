@@ -19,7 +19,7 @@ namespace TreetMeBetter
         // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            var connString = "Server=tcp:treetmebetter.database.windows.net,1433;Initial Catalog=TreetMeBetter;Persist Security Info=False;User ID=dbadmin;Password=Paulinepassword1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30";
+            var connString = "";
             services.AddDbContext<TreetMeBetterContext>();
             services.AddDbContext<IdentityDbContext>(
                 options => options.UseSqlServer(connString));
