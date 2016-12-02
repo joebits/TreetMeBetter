@@ -58,7 +58,7 @@ namespace TreetMeBetter.Models
                     GetCo2(o, 7, travelInfo);
                     break;
             }
-            return AddNewTravel(travelInfo);
+            return /*AddNewTravel(travelInfo)*/ 1;
         }
 
         internal async Task<string> GetUserInfoFromdb(string userName)

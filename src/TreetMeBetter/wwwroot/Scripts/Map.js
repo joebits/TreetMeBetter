@@ -32,7 +32,7 @@ $('#goBtn').click(function () {
     var from = document.getElementById('from').value;
     var to = document.getElementById('to').value;
     $('#error').html('');
-    if (type == null) {
+    if (type === null) {
         $('#error').html('Oops... something went wrong');
     }
 
@@ -66,11 +66,11 @@ function treeConverter(co2) {
         if ((numberOfBigTrees * 20000) - co2 >= 4000) {
             numberOfBigTrees = numberOfBigTrees - 1;
             co2 = co2 - (numberOfBigTrees * 20000);
-            var numberOfSmallTrees = Math.round(co2 / 5000);
+            numberOfSmallTrees = Math.round(co2 / 5000);
         }
         else if ((numberOfBigTrees * 20000) - co2 <= -4000) {
             co2 = co2 - (numberOfBigTrees * 20000);
-            var numberOfSmallTrees = Math.round(co2 / 5000);
+            numberOfSmallTrees = Math.round(co2 / 5000);
         }
     }
     else if (co2 < 20000) {
@@ -81,7 +81,7 @@ function treeConverter(co2) {
         $("<span style='color:green;' class='glyphicon glyphicon-tree-deciduous glyphicon-large'></span>").appendTo("#treeDiv");
     }
 
-    for (var i = 0; i < numberOfSmallTrees; i++) {
+    for (var j = 0; j < numberOfSmallTrees; j++) {
         $("<span style='color:green;' class='glyphicon glyphicon-tree-deciduous glyphicon-small'></span>").appendTo("#treeDiv");
     }
     $("body").animate({ scrollTop: $('body').prop("scrollHeight") }, 1500);
@@ -215,7 +215,7 @@ function doGeoCall(address) {
 
 function setHTML(position, type, result) {
     var distance = result.emissions[position].routedDistance;
-    if (position == 7 && distance > 2000000) {
+    if (position === 7 && distance > 2000000) {
         document.getElementById('postCarbon').innerHTML = Math.round(distance / 5556) + ' ' + 'Kg CO2';
         treeConverter(distance / 5, 5556);
     }
